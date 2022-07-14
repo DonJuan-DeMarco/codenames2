@@ -17,6 +17,7 @@ function Keys() {
 		}
 		return array;
 	};
+	let starter;
 	const generateKeys = () => {
 		let cells = [
 			'blue',
@@ -44,57 +45,61 @@ function Keys() {
 			'white',
 			'Black',
 		];
-		let starter = Math.random() < 0.5 ? 'red' : 'blue';
+		starter = Math.random() < 0.5 ? 'red' : 'blue';
 		cells.push(starter);
 		cells = shuffle(cells);
 
-		drawCells(cells);
 		return cells;
 	};
-	const drawCells = (cells) => {
-		let str = '';
-		let blueCount = 0;
-
-		cells.forEach((cell) => {
-			if (cell === 'blue') blueCount++;
-
-			str += cell.charAt(0);
-		});
-	};
-	let blueCount = 0;
 	return (
 		<>
-			<div className='key-wrapper-1'>
-				<div className='key-board clearfix' id='key-board'>
-					{generateKeys().map((cellur, i) => {
-						if (cellur === 'blue') blueCount++;
-						return <div key={i} className={`cell ${cellur}`}></div>;
-					})}
-				</div>
-				<div
-					className={`lamp top ${blueCount === 9 ? 'blue' : 'red'}`}
-				></div>
-				<div
-					className={`lamp right side ${
-						blueCount === 9 ? 'blue' : 'red'
-					}`}
-				></div>
-				<div
-					className={`lamp left  side ${
-						blueCount === 9 ? 'blue' : 'red'
-					}`}
-				></div>
-				<div
-					className={`lamp bottom ${
-						blueCount === 9 ? 'blue' : 'red'
-					}`}
-				></div>
-				<div className='bezel top'></div>
-				<div className='bezel right'></div>
-				<div className='bezel left'></div>
-				<div className='bezel bottom'></div>
+			<div className='keys-wrapper'>
+				{Array(40)
+					.fill(true)
+					.map((_, iKey) => (
+						<div key={iKey} className='key-wrapper-1'>
+							<div className='key-board clearfix' id='key-board'>
+								{generateKeys().map((cell, i) => {
+									return (
+										<div
+											key={i}
+											className={`cell ${cell}`}
+										></div>
+									);
+								})}
+							</div>
+							<div
+								className={`lamp top ${
+									starter === 'blue' ? 'blue' : 'red'
+								}`}
+							></div>
+							<div
+								className={`lamp right side ${
+									starter === 'blue' ? 'blue' : 'red'
+								}`}
+							></div>
+							<div
+								className={`lamp left  side ${
+									starter === 'blue' ? 'blue' : 'red'
+								}`}
+							></div>
+							<div
+								className={`lamp bottom ${
+									starter === 'blue' ? 'blue' : 'red'
+								}`}
+							></div>
+							<div className='bezel top'></div>
+							<div className='bezel right'></div>
+							<div className='bezel left'></div>
+							<div className='bezel bottom'></div>
+						</div>
+					))}
+				{Array(40)
+					.fill(true)
+					.map((_, iKey) => (
+						<div key={iKey} className='key-wrapper-shirt'></div>
+					))}
 			</div>
-			<div className='key-wrapper-shirt'> </div>
 		</>
 	);
 }

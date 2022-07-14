@@ -579,3 +579,14 @@
 	position: absolute;
 	z-index: 0;
 }
+
+.keys-wrapper {
+	background-color: antiquewhite;
+	padding: 10px;
+	width: 29.7cm;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
