@@ -11,31 +11,6 @@
 	}
 }
 
-@media print {
-	html,
-	body {
-		width: 297mm;
-		height: 210mm;
-	}
-	.App-header {
-		display: none !important;
-		background-color: red !important;
-	}
-	.counter {
-		display: none !important;
-		background-color: red !important;
-	}
-	.keys-wrapper {
-		background-color: white !important;
-		border: initial;
-		border-radius: initial;
-		width: initial;
-		min-height: initial;
-		box-shadow: initial;
-		background: initial;
-		page-break-after: always;
-	}
-}
 .App-header {
 	background-color: #282c34;
 	min-height: 10vh;
@@ -620,4 +595,46 @@
 	justify-content: center;
 	align-items: center;
 	align-content: center;
+}
+
+@media print {
+	html,
+	body {
+		width: 297mm;
+		height: 210mm;
+	}
+	.App-header {
+		display: none !important;
+		background-color: red !important;
+	}
+	.counter {
+		display: none !important;
+		background-color: red !important;
+	}
+	.keys-wrapper {
+		background-color: white !important;
+		border: initial;
+		border-radius: initial;
+		width: initial;
+		min-height: initial;
+		box-shadow: initial;
+		background: initial;
+		page-break-after: always;
+	}
+}
+@media (max-width: 400px) {
+	.keys-wrapper {
+		zoom: 31.5%;
+	}
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+	.keys-wrapper {
+		zoom: 35%;
+	}
+}
+@media (min-width: 800px) and (max-width: 1100px) {
+	.keys-wrapper {
+		zoom: 70%;
+	}
 }
