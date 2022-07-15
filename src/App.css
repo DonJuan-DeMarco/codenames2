@@ -1,8 +1,10 @@
+* {
+	overflow: visible;
+}
 .App-logo {
 	height: 40vmin;
 	pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {
 		animation: App-logo-spin infinite 20s linear;
@@ -10,9 +12,28 @@
 }
 
 @media print {
+	html,
+	body {
+		width: 297mm;
+		height: 210mm;
+	}
 	.App-header {
 		display: none !important;
 		background-color: red !important;
+	}
+	.counter {
+		display: none !important;
+		background-color: red !important;
+	}
+	.keys-wrapper {
+		background-color: white !important;
+		border: initial;
+		border-radius: initial;
+		width: initial;
+		min-height: initial;
+		box-shadow: initial;
+		background: initial;
+		page-break-after: always;
 	}
 }
 .App-header {
@@ -222,35 +243,41 @@
 .blue-link {
 	background-image: url(img/bears.JPG);
 	background-size: 105%;
-	background-position: 50% 2%;
+	background-position: 50% 98.5%;
 }
-.blue-link:nth-child(even) {
+/* .blue-link:nth-child(even) {
 	background-image: url(img/spybears.jpg);
-	background-size: 105%;
-	background-position: 50% 2.5%;
-}
+	background-position: 50% 97.5%;
+} */
 .red-link {
 	/* background-color: var(--blue-linker); */
 	background-image: url(img/bears.JPG);
 	background-size: 105%;
-	background-position: 50% 98.5%;
+	background-position: 50% 2%;
 }
-.red-link:nth-child(even) {
+/* .red-link:nth-child(even) {
 	background-image: url(img/spybears.jpg);
+	background-size: 105%;
+	background-position: 50% 2.5%;
+} */
+
+.double-link {
+	background-image: url(img/spybears.jpg);
+	background-size: 105%;
+	background-position: 50% 2.5%;
+}
+
+.double-link-back {
+	background-image: url(img/spybears.jpg);
+	background-size: 105%;
 	background-position: 50% 97.5%;
 }
 
-.double-link {
+.white-link {
 	background-image: url(img/bears.JPG);
 	background-size: 105%;
 	background-position: 50% 50%;
 }
-.double-link-back {
-	background-image: url(img/bears.JPG);
-	background-size: 105%;
-	background-position: 50% 50%;
-}
-
 .black-link {
 	background-image: url(img/black.jpg);
 	background-color: var(--black-linker);
@@ -280,20 +307,6 @@
 /* KEYS #################################################################################################### */
 /* TODO: KEYS ############################################################################################## */
 /* KEYS #################################################################################################### */
-
-.key-wrapper-1 {
-	background: #cfa58c;
-	border: 2px solid #5c493a;
-	padding: 0.5cm;
-	width: 6.7cm;
-	border-radius: 0.5cm;
-	margin: 20px auto;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0;
-}
 
 .key-board {
 	border: 5px solid #57473a;
@@ -419,7 +432,8 @@
 }
 
 .lamp.blue.top {
-	box-shadow: 0px 0px 15px #90cfd4;
+	/* box-shadow: 0px 0px 15px #90cfd4; */
+	box-shadow: 0px 0px 15px #0008ff;
 }
 
 .lamp.red.top {
@@ -434,7 +448,7 @@
 }
 
 .lamp.blue.bottom {
-	box-shadow: 0px -0px 15px #90cfd4;
+	box-shadow: 0px -0px 15px #0008ff;
 }
 
 .lamp.red.bottom {
@@ -456,11 +470,11 @@
 }
 
 .lamp.blue.left {
-	box-shadow: 0px 0px 15px #90cfd4;
+	box-shadow: 0px 0px 15px #0008ff;
 }
 
 .lamp.blue.right {
-	box-shadow: 0px 0px 15px #90cfd4;
+	box-shadow: 0px 0px 15px #0008ff;
 }
 
 .lamp.red.left {
@@ -532,6 +546,21 @@
 	color: wheat;
 	text-decoration: none;
 }
+
+.key-wrapper-1 {
+	background: #cfa58c;
+	border: 2px solid #5c493a;
+	padding: 0.5cm;
+	width: 6.7cm;
+	border-radius: 0.5cm;
+	margin: 20px auto;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0;
+}
+
 .key-wrapper-shirt {
 	background: #3b2f28;
 	/* background: #3b2f28; */
@@ -582,11 +611,13 @@
 
 .keys-wrapper {
 	background-color: antiquewhite;
-	padding: 10px;
 	width: 29.7cm;
+	height: 20.98cm;
+	padding: 0 !important;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	align-content: center;
 }
