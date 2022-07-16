@@ -249,7 +249,7 @@
 }
 
 .white-link {
-	background-image: url(img/bears.JPG);
+	background-image: url(img/bears2.jpg);
 	background-size: 105%;
 	background-position: 50% 50%;
 }
@@ -350,7 +350,7 @@
 }
 
 .cell.white {
-	background: #e3c674;
+	background: #eed696;
 }
 
 .cell.Black {
@@ -461,7 +461,8 @@
 }
 
 .bezel {
-	background: #c29171;
+	/* background: #c29171; */
+	background: #7f5f4a;
 	position: absolute;
 }
 
@@ -523,7 +524,9 @@
 }
 
 .key-wrapper-1 {
-	background: #cfa58c;
+	/* background: #cfa58c; */
+
+	background: #8b6f5f;
 	border: 2px solid #5c493a;
 	padding: 0.5cm;
 	width: 6.7cm;
@@ -623,24 +626,21 @@
 	}
 }
 @media only screen and (max-width: 400px) {
-	body {
-		-webkit-text-size-adjust: none;
-	}
 	.keys-wrapper {
 		zoom: 31.5%;
+		-webkit-transform: scale(0.315);
 	}
 }
 
 @media only screen and (min-width: 400px) and (max-width: 800px) {
-	body {
-		-webkit-text-size-adjust: none;
-	}
 	.keys-wrapper {
 		zoom: 35%;
+		-webkit-transform: scale(0.35);
 	}
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
 	.keys-wrapper {
 		zoom: 70%;
+		-webkit-transform: scale(0.7);
 	}
 }

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 function Keys() {
 	let redStarter = 0,
 		blueStarter = 0;
