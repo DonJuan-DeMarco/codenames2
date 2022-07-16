@@ -628,19 +628,16 @@
 @media only screen and (max-width: 400px) {
 	.keys-wrapper {
 		zoom: 31.5%;
-		-webkit-transform: scale(0.315);
 	}
 }
 
 @media only screen and (min-width: 400px) and (max-width: 800px) {
 	.keys-wrapper {
 		zoom: 35%;
-		-webkit-transform: scale(0.35);
 	}
 }
 @media only screen and (min-width: 800px) and (max-width: 1100px) {
 	.keys-wrapper {
 		zoom: 70%;
-		-webkit-transform: scale(0.7);
 	}
 }
