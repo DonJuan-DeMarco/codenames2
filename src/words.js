@@ -542,5 +542,26 @@ let words = [...word_set];
 // console.log('====================================');
 // console.log(words.sort());
 console.log('====================================');
-const word_list = words.sort((a, b) => a - b);
+
+const shuffle = (array) => {
+	let currentIndex = array.length,
+		temporaryValue,
+		randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+	return array;
+};
+words = shuffle(words);
+// const word_list = words.sort();
+const word_list = words;
 export default word_list;
