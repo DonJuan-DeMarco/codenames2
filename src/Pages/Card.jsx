@@ -28,7 +28,9 @@ function Card() {
 					{words.map((word, index) => (
 						<div className='word-card' key={index}>
 							{(word.toLowerCase() === 'королева' ||
-								word.toLowerCase() === 'королева') && (
+								word.toLowerCase() === 'міледі' ||
+								word.toLowerCase() === 'сонік' ||
+								word.toLowerCase() === 'лебідка') && (
 								<span></span>
 							)}
 							<p className='word mirrored'>{word}</p>
@@ -39,6 +41,8 @@ function Card() {
 					))}
 				</div>
 			))}
+			<p className='counter'>Pages Count: {wordList.length}</p>
+			<p className='counter'>Words Cunt: {word_list.length}</p>
 		</>
 	);
 }
