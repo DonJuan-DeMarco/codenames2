@@ -3,6 +3,7 @@ import Card from './Pages/Card';
 import LinkerBlue from './Pages/LinkerBlue';
 import Keys from './Pages/Keys';
 import { Link, Route, Routes } from 'react-router-dom';
+import Unknown from './Pages/Unknown';
 
 function App() {
 	return (
@@ -19,6 +20,9 @@ function App() {
 					<Link className='link' to='keys'>
 						Keys
 					</Link>
+					<Link className='link' to='unknown'>
+						Unknown
+					</Link>
 				</nav>
 			</header>
 			<main className='App-main'>
@@ -27,6 +31,7 @@ function App() {
 					<Route path='words' element={<Card />} />
 					<Route path='linkers' element={<LinkerBlue />} />
 					<Route path='keys' element={<Keys />} />
+					<Route path='unknown' element={<Unknown />} />
 				</Routes>
 				{/* <Card />
 				<LinkerBlue /> */}

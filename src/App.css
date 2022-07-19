@@ -143,6 +143,17 @@
 	color: #000;
 }
 
+.word_unknown {
+	font-weight: 500;
+	text-transform: lowercase;
+	font-size: 0.6cm;
+	color: #000;
+}
+
+.unknown_list {
+	text-align: left;
+}
+
 .mirrored {
 	font-size: 0.5cm;
 	color: rgb(243, 238, 238);
@@ -640,4 +651,8 @@
 	.keys-wrapper {
 		zoom: 70%;
 	}
+}
+
+.center {
+	background-color: red;
 }

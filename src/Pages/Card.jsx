@@ -24,6 +24,10 @@ function Card() {
 			<p className='counter'>Words Cunt: {word_list.length}</p>
 			{/* <div className='wrapper-words'> */}
 			{wordList.map((words, pageKey) => (
+				// <div
+				// 	key={pageKey}
+				// 	className={`keys-wrapper ${pageKey === 19 ? 'center' : ''}`}
+				// >
 				<div key={pageKey} className='keys-wrapper'>
 					{words.map((word, index) => (
 						<div className='word-card' key={index}>
@@ -33,6 +37,7 @@ function Card() {
 								word.toLowerCase() === 'лебідка') && (
 								<span></span>
 							)}
+
 							<p className='word mirrored'>{word}</p>
 							<div className='main-field'>
 								<p className='word main-word'>{word}</p>
