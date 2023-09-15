@@ -1,4 +1,4 @@
-import './App.css';
+import './App2.css';
 import Card from './Pages/Card';
 import LinkerBlue from './Pages/LinkerBlue';
 import Keys from './Pages/Keys';

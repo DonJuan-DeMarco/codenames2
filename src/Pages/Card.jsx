@@ -31,12 +31,12 @@ function Card() {
 				<div key={pageKey} className='keys-wrapper'>
 					{words.map((word, index) => (
 						<div className='word-card' key={index}>
-							{(word.toLowerCase() === 'королева' ||
+							{/* {(word.toLowerCase() === 'королева' ||
 								word.toLowerCase() === 'міледі' ||
 								word.toLowerCase() === 'сонік' ||
 								word.toLowerCase() === 'лебідка') && (
 								<span></span>
-							)}
+							)} */}
 
 							<p className='word mirrored'>{word}</p>
 							<div className='main-field'>
