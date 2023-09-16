@@ -922,7 +922,7 @@ const word_set2 = new Set([
 	'Скайп',
 	'Вагінка',
 	'Клітерщик',
-	'Папероні',
+	'Пепероні',
 	'Озеро',
 	'Блять',
 	'Аут',
@@ -1029,7 +1029,13 @@ const word_set2 = new Set([
 
 // TODO ВОЛОСПАД,
 
+let words_old = [...word_set];
 let words = [...word_set2];
+
+const filteredWords = words.filter((word) => [...words_old].indexOf(word) < 0);
+console.log('====================================');
+console.log('filteredWords', filteredWords);
+console.log('====================================');
 // words = Array.from(words).sort((a, b) => b - a);
 // console.log('====================================');
 // console.log(words.sort());
@@ -1054,6 +1060,6 @@ const shuffle = (array) => {
 	return array;
 };
 // words = shuffle(words);
-// const word_list = words.sort();
-const word_list = shuffle(words);
+const word_list = filteredWords.sort();
+// const word_list = shuffle(filteredWords);
 export default word_list;

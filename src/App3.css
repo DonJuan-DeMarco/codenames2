@@ -105,7 +105,7 @@
 .word-card:after {
 	content: '';
 	/* background: url(img/voronoi_whited75.png); */
-	background: url('img/japan_waves1.png'), url('img/japan_view.png');
+	background: url('img/japan_waves1.png');
 	background-repeat: repeat;
 	background-size: cover;
 	background-blend-mode: darken;
@@ -148,7 +148,7 @@
 	z-index: 0;
 } */
 .word-card p {
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
 	font-family: 'AlegreSans-Regular' !important;
 	letter-spacing: 0.1cm;
@@ -157,7 +157,7 @@
 .word {
 	/* font-weight: bold; */
 	text-transform: uppercase;
-	font-size: 0.7cm;
+	/* font-size: 0.7cm; */
 	color: var(--word-color);
 }
 
@@ -179,23 +179,23 @@
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
 		1px 1px 0 #000;
 	transform: rotate(180deg);
-	padding: 0.1cm 0 0.1cm 0.6cm !important;
+	padding: 0.1cm 0.6cm !important;
 	background: linear-gradient(
 		to right,
-		var(--bg-color-2),
-		var(--bg-color-2),
+		var(--bg-color),
+		var(--bg-color),
 		var(--bg-color-5),
 		var(--bg-color-4)
 	);
 	font-style: italic;
 	z-index: 13;
 	bottom: 2.7cm;
+	width: 2.4cm;
+	border-radius: 0 0 0 3cm;
 	position: relative;
 }
 
 .main-field {
-	width: 5.4cm;
-	height: 1.2cm;
 	/* background-color: #d6ae7e; */
 	background-color: transparent;
 	text-align: center;
@@ -203,32 +203,35 @@
 	justify-content: center;
 	align-items: center;
 	align-self: center;
-	z-index: 1;
-	width: 100%;
-	height: 100%;
+	width: 4cm;
+	height: 4cm;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 	position: absolute;
 	z-index: 5;
+	border: 0.3cm solid white;
+	box-sizing: border-box;
 }
 .main-word {
 	z-index: 5;
-	bottom: -5%;
+	bottom: -15%;
 	position: relative;
 	transform: scaleY(1.18);
 }
 .main-field:after {
 	content: '';
 	position: absolute;
-	width: 0;
-	height: 0.6cm;
-	bottom: 10%;
+	width: 5.5cm;
+	height: 0.9cm;
+	bottom: 24%;
+	background-color: white;
+	transform: skewX(155deg);
 
-	right: 5%;
-	/* top: 50%;
-	right: 50%;
-	transform: translate(-50%, -50%); */
-	border-right: 5.8cm solid #ffffff;
+	/* border-right: 5.8cm solid #ffffff;
 	border-top: 1.3cm solid transparent;
-	border-bottom: 1.3cm solid transparent;
+	border-bottom: 1.3cm solid transparent; */
 }
 
 /*LINKERS ###############################################################################################*/
