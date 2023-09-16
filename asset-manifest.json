@@ -1,21 +1,27 @@
 {
   "files": {
-    "main.css": "/codenames2/static/css/main.7ce3d851.css",
-    "main.js": "/codenames2/static/js/main.add78b19.js",
+    "main.css": "/codenames2/static/css/main.db5538e3.css",
+    "main.js": "/codenames2/static/js/main.5bef816e.js",
+    "static/js/703.875e049e.chunk.js": "/codenames2/static/js/703.875e049e.chunk.js",
+    "static/js/347.d384040f.chunk.js": "/codenames2/static/js/347.d384040f.chunk.js",
     "static/media/black.jpg": "/codenames2/static/media/black.b75978f7df39de38142a.jpg",
-    "static/media/voronoi_whited75.png": "/codenames2/static/media/voronoi_whited75.9ca53ff5140c6ee32b91.png",
     "static/media/spybears.jpg": "/codenames2/static/media/spybears.496b052f9feb4c69077c.jpg",
     "static/media/bears2.jpg": "/codenames2/static/media/bears2.840aa3aed1cc9f16dd30.jpg",
     "static/media/paw-pressed2.png": "/codenames2/static/media/paw-pressed2.49330ac26b57535a4756.png",
     "static/media/bears.JPG": "/codenames2/static/media/bears.dc02b570f03b68091567.JPG",
     "static/media/fabric.png": "/codenames2/static/media/fabric.85f4597b4b2e1b14b5c5.png",
+    "static/media/AlegreSans-Regular.ttf": "/codenames2/static/media/AlegreSans-Regular.c1e01da92d3f0ffb7f66.ttf",
     "static/media/swan.png": "/codenames2/static/media/swan.c702db4c27598c4686fe.png",
+    "static/media/hand-painted-watercolor-pastel-sky-cloud-background_41066-1948.avif": "/codenames2/static/media/hand-painted-watercolor-pastel-sky-cloud-background_41066-1948.bf404d55eb16a4af0525.avif",
+    "static/media/Airport.otf": "/codenames2/static/media/Airport.9fe9d9cb6c8d679ea79f.otf",
     "index.html": "/codenames2/index.html",
-    "main.7ce3d851.css.map": "/codenames2/static/css/main.7ce3d851.css.map",
-    "main.add78b19.js.map": "/codenames2/static/js/main.add78b19.js.map"
+    "main.db5538e3.css.map": "/codenames2/static/css/main.db5538e3.css.map",
+    "main.5bef816e.js.map": "/codenames2/static/js/main.5bef816e.js.map",
+    "703.875e049e.chunk.js.map": "/codenames2/static/js/703.875e049e.chunk.js.map",
+    "347.d384040f.chunk.js.map": "/codenames2/static/js/347.d384040f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ce3d851.css",
-    "static/js/main.add78b19.js"
+    "static/css/main.db5538e3.css",
+    "static/js/main.5bef816e.js"
   ]
 }
