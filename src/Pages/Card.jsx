@@ -22,13 +22,13 @@ const wordList = listToMatrix(word_list, 16);
 console.log(word_list);
 function Card() {
 	const options = {
-		scale: 11,
+		scale: 4,
 		useCORS: true,
 	};
 
 	const createPDF = async () => {
 		console.log('startedPDF');
-		const pdf = new jsPDF('landscapee', 'cm', [6.6, 4.4]);
+		const pdf = new jsPDF('landscapee', 'mm', [66, 44]);
 		word_list.length = 10;
 		const dd = word_list.map(async (word, idx) => {
 			console.log('#' + idx + ' working on ' + word);
@@ -40,10 +40,11 @@ function Card() {
 			const img = data.toDataURL(`image${idx + 1}/png`);
 			const imgProperties = pdf.getImageProperties(img);
 			const pdfWidth = pdf.internal.pageSize.getWidth();
+			console.log(pdfWidth);
 			const pdfHeight =
 				(imgProperties.height * pdfWidth) / imgProperties.width;
 			pdf.addPage([pdfWidth, pdfHeight], 'l');
-			pdf.addImage(img, 'PNG', 0, 0, pdfWidth, pdfHeight);
+			pdf.addImage(img, 'PNG', 0, 0, pdfWidth + 1, pdfHeight + 1);
 			console.log(' finished on ' + word);
 		});
 		console.log('preprom');
