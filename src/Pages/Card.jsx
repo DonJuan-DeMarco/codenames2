@@ -29,7 +29,7 @@ function Card() {
 	const createPDF = async () => {
 		console.log('startedPDF');
 		const pdf = new jsPDF('landscapee', 'mm', [66, 44]);
-		const chunkSize = 80;
+		const chunkSize = 50;
 		for (let i = 0; i < word_list.length; i += chunkSize) {
 			const chunk = word_list.slice(i, i + chunkSize);
 			// do whatever
