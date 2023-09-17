@@ -29,28 +29,35 @@ function Card() {
 	const createPDF = async () => {
 		console.log('startedPDF');
 		const pdf = new jsPDF('landscapee', 'mm', [66, 44]);
-		word_list.length = 10;
-		const dd = word_list.map(async (word, idx) => {
-			console.log('#' + idx + ' working on ' + word);
-			const data = await html2canvas(
-				document.querySelector(`#pdf_${idx}`),
-				options
-			);
-			console.log(data);
-			const img = data.toDataURL(`image${idx + 1}/png`);
-			const imgProperties = pdf.getImageProperties(img);
-			const pdfWidth = pdf.internal.pageSize.getWidth();
-			console.log(pdfWidth);
-			const pdfHeight =
-				(imgProperties.height * pdfWidth) / imgProperties.width;
-			pdf.addPage([pdfWidth, pdfHeight], 'l');
-			pdf.addImage(img, 'PNG', 0, 0, pdfWidth + 1, pdfHeight + 1);
-			console.log(' finished on ' + word);
-		});
-		console.log('preprom');
-		if (await Promise.all(dd)) {
-			console.log('PROM');
-			pdf.save(`card_2.pdf`);
+		const chunkSize = 80;
+		for (let i = 0; i < word_list.length; i += chunkSize) {
+			const chunk = word_list.slice(i, i + chunkSize);
+			// do whatever
+
+			const dd = chunk.map(async (word, idx) => {
+				console.log('#' + idx + ' working on ' + word);
+
+				const cleansedWord = word.replace(/[`'"‘’“”]/g, '');
+				const data = await html2canvas(
+					document.querySelector(`#pdf_${cleansedWord}`),
+					options
+				);
+				console.log(data);
+				const img = data.toDataURL(`image_${cleansedWord}/png`);
+				const imgProperties = pdf.getImageProperties(img);
+				const pdfWidth = pdf.internal.pageSize.getWidth();
+				console.log(pdfWidth);
+				const pdfHeight =
+					(imgProperties.height * pdfWidth) / imgProperties.width;
+				pdf.addPage([66, 44], 'l');
+				pdf.addImage(img, 'PNG', 0, 0, pdfWidth + 1, pdfHeight + 1);
+				console.log(' finished on ' + word);
+			});
+			console.log('preprom', await dd);
+			if (await Promise.all(dd)) {
+				console.log('PROM');
+				pdf.save(`Слова_${i}.pdf`);
+			}
 		}
 	};
 
@@ -68,28 +75,31 @@ function Card() {
 				// 	className={`keys-wrapper ${pageKey === 19 ? 'center' : ''}`}
 				// >
 				<div key={pageKey} className='keys-wrapper'>
-					{words.map((word, index) => (
-						<div
-							className='word-card'
-							key={index}
-							id={`pdf_${pageKey * index + index}`}
-						>
-							{/* {(word.toLowerCase() === 'королева' ||
+					{words.map((word, index) => {
+						const cleansedWord = word.replace(/[`'"‘’“”]/g, '');
+						return (
+							<div
+								className='word-card'
+								key={index}
+								id={`pdf_${cleansedWord}`}
+							>
+								{/* {(word.toLowerCase() === 'королева' ||
 								word.toLowerCase() === 'міледі' ||
 								word.toLowerCase() === 'сонік' ||
 								word.toLowerCase() === 'лебідка') && (
 								<span></span>
 							)} */}
 
-							<p className='word mirrored'>{word}</p>
-							{/* <div className='main-field-inner-border' />
+								<p className='word mirrored'>{word}</p>
+								{/* <div className='main-field-inner-border' />
 							<div className='main-field-outer-border' />
 							<div className='pseudo-main-field' /> */}
-							<div className='main-field'>
-								<p className='word main-word'>{word}</p>
+								<div className='main-field'>
+									<p className='word main-word'>{word}</p>
+								</div>
 							</div>
-						</div>
-					))}
+						);
+					})}
 				</div>
 			))}
 			<p className='counter'>Pages Count: {wordList.length}</p>
