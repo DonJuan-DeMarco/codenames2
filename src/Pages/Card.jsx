@@ -22,8 +22,7 @@ const wordList = listToMatrix(word_list, 16);
 console.log(word_list);
 function Card() {
 	const options = {
-		scale: 4,
-		useCORS: true,
+		scale: 2,
 	};
 
 	const createPDF = async () => {
@@ -35,23 +34,31 @@ function Card() {
 			// do whatever
 
 			const dd = chunk.map(async (word, idx) => {
-				console.log('#' + idx + ' working on ' + word);
+				try {
+					console.log('#' + idx + ' working on ' + word);
 
-				const cleansedWord = word.replace(/[`'"‘’“”]/g, '');
-				const data = await html2canvas(
-					document.querySelector(`#pdf_${cleansedWord}`),
-					options
-				);
-				console.log(data);
-				const img = data.toDataURL(`image_${cleansedWord}/png`);
-				const imgProperties = pdf.getImageProperties(img);
-				const pdfWidth = pdf.internal.pageSize.getWidth();
-				console.log(pdfWidth);
-				const pdfHeight =
-					(imgProperties.height * pdfWidth) / imgProperties.width;
-				pdf.addPage([66, 44], 'l');
-				pdf.addImage(img, 'PNG', 0, 0, pdfWidth + 1, pdfHeight + 1);
-				console.log(' finished on ' + word);
+					const cleansedWord = word.replace(/[`'"‘’“”]/g, '');
+					const data = await html2canvas(
+						document.querySelector(`#pdf_${cleansedWord}`),
+						options
+					);
+					console.log(data);
+					const img = data.toDataURL(`image_${cleansedWord}/png`);
+					const imgProperties = pdf.getImageProperties(img);
+					const pdfWidth = pdf.internal.pageSize.getWidth();
+					console.log(img);
+					const pdfHeight =
+						(imgProperties.height * pdfWidth) / imgProperties.width;
+					pdf.addPage([66, 44], 'l');
+					pdf.addImage(img, 'PNG', 0, 0, pdfWidth + 1, pdfHeight + 1);
+					console.log(' finished on ' + word);
+				} catch (error) {
+					console.log('====================================');
+					console.log(word);
+					console.warn(error, word);
+					console.log('====================================');
+					Promise.resolve();
+				}
 			});
 			console.log('preprom', await dd);
 			if (await Promise.all(dd)) {
